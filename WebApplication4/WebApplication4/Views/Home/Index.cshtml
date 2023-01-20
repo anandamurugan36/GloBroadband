@@ -1,0 +1,59 @@
+﻿@using System.Web.Mvc.Html;
+@model IEnumerable<WebApplication4.Models.Location>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Town)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created_by)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location_Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Pincode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Town)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created_by)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Created_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
+
+    </table>
